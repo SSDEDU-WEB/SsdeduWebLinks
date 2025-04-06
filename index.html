@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSSDEDU Web Links</title>
+    <title>SSDEDU Web Links</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg, #1e3c72, #2a5298, #0d1117);
+            background-color: #0d1117;
             color: #fff;
             overflow: hidden;
+        }
+
+        /* Animated Background */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        body {
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #ff8c00, #ffa500);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 10s infinite alternate ease-in-out;
         }
 
         .banner {
@@ -27,29 +43,32 @@
         }
 
         .banner h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin: 0;
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        @keyframes slideDown {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        .about-section {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         .button-container {
@@ -60,17 +79,6 @@
             max-width: 1000px;
             padding: 30px;
             animation: zoomIn 1.5s ease-in-out;
-        }
-
-        @keyframes zoomIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
         }
 
         .button-container a {
@@ -85,7 +93,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             position: relative;
-            animation: floatEffect 3s infinite ease-in-out;
         }
 
         .button-container a:hover {
@@ -94,47 +101,37 @@
             background: linear-gradient(135deg, #66bb6a, #43a047);
         }
 
-        @keyframes floatEffect {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
         footer {
-            position: absolute;
-            bottom: 15px;
-            font-size: 0.9rem;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 1.1rem;
+            text-align: center;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            animation: fadeInFooter 2s ease-in-out;
-        }
-
-        @keyframes fadeInFooter {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 2px solid #ffa500;
         }
     </style>
 </head>
 <body>
     <div class="banner">
-        <h1>Welcome to SSSDEDU Web Links</h1>
+        <h1>Welcome to SSDEDU Web Links</h1>
     </div>
+
     <div class="button-container">
         <a href="https://www.scrsd.org/" target="_blank">Scrsd Website</a>
         <a href="http://sites.google.com/view/unblockedgames-9x/" target="_blank">Unblocked Games 9x</a>
         <a href="https://maxyt5184.github.io/SSDEDU-SCHOOL-SMP/" target="_blank">School SMP Website</a>
         <a href="https://maxyt5184.github.io/IO-clock/" target="_blank">IO Clock</a>
     </div>
+
+    <div class="about-section">
+        <h2>About Andy Torres</h2>
+        <p>Hello! My name is Andy Torres, and I am the creator of SSSDEDU Web Links. I have a passion for technology, web design, and creating innovative digital experiences that connect people and resources. With a background in coding and a love for problem-solving, I enjoy turning ideas into reality and making the internet a more accessible place.</p>
+        <p>In my free time, I love exploring new tech trends, gaming, and sharing my knowledge with others. This website reflects my dedication to providing valuable links and resources. Thank you for visiting, and I hope you find it useful and engaging!</p>
+    </div>
+
     <footer>
-        © 2025 SSSDEDU Web Links | Designed with ✨
+        © 2025 SSDEDU Web Links | Made by Andy Torres | Your ultimate resource hub.
     </footer>
 </body>
 </html>
