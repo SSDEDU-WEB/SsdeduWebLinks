@@ -9,25 +9,21 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #ff8c00, #ffa500);
+            background-size: 400% 400%;
+            animation: godlyBackgroundAnimation 8s infinite alternate ease-in-out;
             color: #fff;
             overflow: hidden;
         }
 
-        /* Animated Background */
-        @keyframes backgroundAnimation {
+        /* God-Mode Animated Background */
+        @keyframes godlyBackgroundAnimation {
             0% {
                 background-position: 0 0;
             }
             100% {
-                background-position: 100% 100%;
+                background-position: 200% 200%;
             }
-        }
-
-        body {
-            background: linear-gradient(45deg, #1e3c72, #2a5298, #ff8c00, #ffa500);
-            background-size: 400% 400%;
-            animation: backgroundAnimation 10s infinite alternate ease-in-out;
         }
 
         .banner {
@@ -38,37 +34,35 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            animation: slideDown 1s ease-in-out;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            animation: slideFromTop 1s ease-out;
         }
 
         .banner h1 {
             font-size: 3rem;
             margin: 0;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: popText 2s infinite alternate ease-in-out;
         }
 
-        .about-section {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        @keyframes slideFromTop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        .about-section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            text-align: justify;
+        @keyframes popText {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+                color: #ff5722;
+            }
         }
 
         .button-container {
@@ -78,37 +72,82 @@
             width: 85%;
             max-width: 1000px;
             padding: 30px;
-            animation: zoomIn 1.5s ease-in-out;
+            animation: zoomInButtons 1.5s ease-in-out;
         }
 
         .button-container a {
             text-decoration: none;
             color: #fff;
             background: linear-gradient(135deg, #4caf50, #2e7d32);
-            padding: 15px 30px;
-            border-radius: 15px;
+            padding: 20px 40px;
+            border-radius: 20px;
             font-size: 1.2rem;
             font-weight: bold;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            animation: bounceEffect 3s infinite ease-in-out;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            position: relative;
         }
 
         .button-container a:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
             background: linear-gradient(135deg, #66bb6a, #43a047);
         }
 
-        footer {
+        @keyframes bounceEffect {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .footer {
             margin-top: 30px;
-            padding: 20px;
-            font-size: 1.1rem;
+            padding: 30px;
+            font-size: 1.5rem;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
             background: rgba(0, 0, 0, 0.3);
-            border-top: 2px solid #ffa500;
+            border-top: 3px solid #ffa500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: fadeInFooter 2s ease-in-out;
+        }
+
+        .footer-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-buttons button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-buttons button:hover {
+            background: linear-gradient(135deg, #66bb6a, #43a047);
+        }
+
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -124,14 +163,18 @@
         <a href="https://maxyt5184.github.io/IO-clock/" target="_blank">IO Clock</a>
     </div>
 
-    <div class="about-section">
-        <h2>About Andy Torres</h2>
-        <p>Hello! My name is Andy Torres, and I am the creator of SSSDEDU Web Links. I have a passion for technology, web design, and creating innovative digital experiences that connect people and resources. With a background in coding and a love for problem-solving, I enjoy turning ideas into reality and making the internet a more accessible place.</p>
-        <p>In my free time, I love exploring new tech trends, gaming, and sharing my knowledge with others. This website reflects my dedication to providing valuable links and resources. Thank you for visiting, and I hope you find it useful and engaging!</p>
-    </div>
-
-    <footer>
-        © 2025 SSDEDU Web Links | Made by Andy Torres | Your ultimate resource hub.
+    <footer class="footer">
+        <div>© 2025 SSDEDU Web Links | Made by Andy Torres | Your ultimate resource hub.</div>
+        <div class="footer-buttons">
+            <button onclick="toggleFooter()">Hide Footer</button>
+            <button onclick="showFooter()">Show Footer</button>
+        </div>
     </footer>
+
+    <script>
+        const footer = document.querySelector('.footer');
+        const toggleFooter = () => footer.style.display = 'none';
+        const showFooter = () => footer.style.display = 'block';
+    </script>
 </body>
 </html>
