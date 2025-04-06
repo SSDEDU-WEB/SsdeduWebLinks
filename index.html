@@ -114,11 +114,33 @@
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .fullscreen-button:hover {
             background: linear-gradient(135deg, #008cff, #0067b3);
             transform: scale(1.1);
+        }
+
+        .fullscreen-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+        }
+
+        .fullscreen-button:active::after {
+            width: 150px;
+            height: 150px;
+            opacity: 0;
         }
 
         .footer {
@@ -139,7 +161,7 @@
     <canvas id="particleCanvas"></canvas>
 
     <div class="banner">
-        <h1>Welcome to SSSDEDU Web Links</h1>
+        <h1>Welcome to SSDEDU Web Links</h1>
     </div>
 
     <button class="fullscreen-button" onclick="toggleFullscreen()">Toggle Fullscreen</button>
